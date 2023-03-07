@@ -25,30 +25,33 @@ ClapTrap &ClapTrap::operator=( const ClapTrap &assign ) {
 }
 
 
-void ClapTrap::attack( const std::string &target) {
+void ClapTrap::attack( const std::string &target ) {
 	if (_ep == 0)
 	{
 		std::cout	<< "ClapTrap " << _name
 					<< " is too tired to attack..." << std::endl;
 		return ; 
 	}
+	if (_hp == 0)
+		return ;
 	std::cout	<< "ClapTrap " << _name
 				<< " attacks " << target
-				<< ", causing " << _attk
+				<< ", dealing " << _attk
 				<< " points of damage!" << std::endl;
 	_ep--;
 }
 
 void ClapTrap::takeDamage( unsigned int amount ) {
 	std::cout	<< "ClapTrap " << _name
-				<< " has taken " << amount
+				<< " takes " << amount
 				<< " points of damage!" << std::endl;
 	if (amount >= _hp)
 	{
 		std::cout	<< "ClapTrap " << _name
-					<< " has taken fatal damage..."
+					<< " has fainted..."
 					<< std::endl;
-		exit(0);
+		_hp = 0;
+		return ;
 	}
 	_hp -= amount;
 }
@@ -60,8 +63,10 @@ void ClapTrap::beRepaired( unsigned int amount ) {
 					<< " is too tired to heal itself..." << std::endl;
 		return ; 
 	}
+	if (_hp == 0)
+		return ;
 	std::cout	<< "ClapTrap " << _name
-				<< " has been healed by " << amount
+				<< " healed by " << amount
 				<< " points of HP!" << std::endl;
 	_ep--;
 }
