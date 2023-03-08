@@ -8,7 +8,10 @@ int main( void ) {
 	brad.takeDamage(2);
 	brad.attack(enemy);
 	brad.beRepaired(1);
-	brad.takeDamage(7);
+	brad.takeDamage(8);
+	brad.beRepaired(1);
+	brad.beRepaired(1);
+	brad.beRepaired(1);
 	brad.beRepaired(1);
 	brad.beRepaired(1);
 	brad.beRepaired(1);

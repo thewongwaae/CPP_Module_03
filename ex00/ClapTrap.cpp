@@ -42,6 +42,8 @@ void ClapTrap::attack( const std::string &target ) {
 }
 
 void ClapTrap::takeDamage( unsigned int amount ) {
+	if (_hp == 0)
+		return ;
 	std::cout	<< "ClapTrap " << _name
 				<< " takes " << amount
 				<< " points of damage!" << std::endl;
@@ -68,5 +70,6 @@ void ClapTrap::beRepaired( unsigned int amount ) {
 	std::cout	<< "ClapTrap " << _name
 				<< " healed by " << amount
 				<< " points of HP!" << std::endl;
+	_hp++;
 	_ep--;
 }
