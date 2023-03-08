@@ -4,7 +4,7 @@ ClapTrap::ClapTrap( std::string name ) : _name(name) {
 	_hp = 10;
 	_ep = 10;
 	_attk = 0;
-	std::cout << "ClapTrap constructed" << std::endl;
+	std::cout << "ClapTrap " << _name << " constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &copy ) {
@@ -13,7 +13,7 @@ ClapTrap::ClapTrap( const ClapTrap &copy ) {
 }
 
 ClapTrap::~ClapTrap( void ) {
-	std::cout << "ClapTrap deconstructed" << std::endl;
+	std::cout << "ClapTrap " << _name << " deconstructed" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=( const ClapTrap &assign ) {
