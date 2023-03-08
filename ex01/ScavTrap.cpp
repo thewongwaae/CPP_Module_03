@@ -1,14 +1,14 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ) {
+ScavTrap::ScavTrap( void ) : ClapTrap() {
 	_name = "nameless";
-	_hp = 10;
-	_ep = 10;
-	_attk = 0;
+	_hp = 100;
+	_ep = 50;
+	_attk = 20;
 	std::cout << "ScavTrap " << _name << " constructed" << std::endl;
 }
 
-ScavTrap::ScavTrap( std::string name ) {
+ScavTrap::ScavTrap( std::string name ) : ClapTrap(name) {
 	_name = name;
 	_hp = 100;
 	_ep = 50;
@@ -20,7 +20,7 @@ ScavTrap::~ScavTrap( void ) {
 	std::cout << "ScavTrap " << _name << " deconstructed" << std::endl; 
 }
 
-ScavTrap::ScavTrap( const ScavTrap &copy ) {
+ScavTrap::ScavTrap( const ScavTrap &copy ) : ClapTrap(copy) {
 	*this = copy;
 	std::cout << "Copy constructor called" << std::endl;
 }
@@ -47,4 +47,9 @@ void ScavTrap::attack( const std::string &target ) {
 				<< ", dealing " << _attk
 				<< " points of damage!" << std::endl;
 	_ep--;
+}
+
+void ScavTrap::guardGate( void ) {
+	std::cout 	<< "ScavTrap " << _name
+				<< " has entered Gate Keeper mode" << std::endl;
 }

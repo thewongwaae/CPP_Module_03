@@ -1,10 +1,10 @@
-NAME	= ClapTrap
+NAME	= ScavTrap
 CPP		= c++ -fsanitize=address -fno-omit-frame-pointer
 FLAGS	= -Wall -Wextra -Werror -I -std=c++98
 RM		= rm -rf
 
-SRC		= ClapTrap.cpp main.cpp
-INC		= ClapTrap.hpp
+SRC		= ClapTrap.cpp ScavTrap.cpp main.cpp
+INC		= ClapTrap.hpp ScavTrap.hpp
 
 OBJ		= $(SRC:%.cpp=%.o)
 
@@ -15,7 +15,7 @@ all : $(NAME)
 	@$(CPP) $(FLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	@echo "\n\033[0;32mClapTrap ready to fight\033[0m"
+	@echo "\n\033[0;32mScavTrap ready to fight\033[0m"
 	@$(CPP) $(FLAGS) $^ -o $@
 
 clean:
@@ -23,7 +23,7 @@ clean:
 	@$(RM) $(OBJ)
 
 fclean: clean
-	@echo "\033[0;31mDisassembling ClapTrap\033[0m"
+	@echo "\033[0;31mDisassembling ScavTrap\033[0m"
 	@$(RM) $(NAME)
 
 re : fclean all

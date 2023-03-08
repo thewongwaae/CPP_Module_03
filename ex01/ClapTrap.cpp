@@ -1,5 +1,12 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap( void ) : _name("nameless") {
+	_hp = 10;
+	_ep = 10;
+	_attk = 0;
+	std::cout << "ClapTrap " << _name << " constructed" << std::endl;
+}
+
 ClapTrap::ClapTrap( std::string name ) : _name(name) {
 	_hp = 10;
 	_ep = 10;
@@ -63,10 +70,16 @@ void ClapTrap::beRepaired( unsigned int amount ) {
 	{
 		std::cout	<< "ClapTrap " << _name
 					<< " is too tired to heal itself..." << std::endl;
-		return ; 
+		return ;
 	}
 	if (_hp == 0)
 		return ;
+	if (_hp == 10)
+	{
+		std::cout	<< "ClapTrap " << _name
+					<< " is at max health!" << std::endl;
+		return;
+	}
 	std::cout	<< "ClapTrap " << _name
 				<< " healed by " << amount
 				<< " points of HP!" << std::endl;
