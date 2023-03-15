@@ -12,6 +12,7 @@ class ClapTrap {
 		unsigned int	_attk;
 
 	public:
+		ClapTrap( void );
 		ClapTrap( std::string name );
 		ClapTrap( const ClapTrap &copy );
 		~ClapTrap( void );

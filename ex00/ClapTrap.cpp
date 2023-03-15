@@ -1,5 +1,13 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap( void ) {
+	_name = "nameless";
+	_hp = 10;
+	_ep = 10;
+	_attk = 0;
+	std::cout << "ClapTrap " << _name << " constructed" << std::endl;
+}
+
 ClapTrap::ClapTrap( std::string name ) : _name(name) {
 	_hp = 10;
 	_ep = 10;
