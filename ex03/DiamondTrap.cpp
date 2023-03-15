@@ -40,6 +40,6 @@ void DiamondTrap::attack( const std::string &target ) {
 
 void DiamondTrap::whoAmI( void ) {
 	std::cout	<< "I am a DiamondTrap named " << _name
-				<< " derived from the ClapTrap named" << ClapTrap::_name
+				<< " derived from the ClapTrap named " << ClapTrap::_name
 				<< std::endl;
 }
