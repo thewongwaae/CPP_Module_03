@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap( void ) : ClapTrap() {
-	_name = "nameless";
+	//_name = "nameless";
 	_hp = 100;
 	_ep = 100;
 	_attk = 30;
@@ -9,7 +9,7 @@ FragTrap::FragTrap( void ) : ClapTrap() {
 }
 
 FragTrap::FragTrap( std::string name ) : ClapTrap(name) {
-	_name = name;
+	//_name = name;
 	_hp = 100;
 	_ep = 100;
 	_attk = 30;
@@ -22,7 +22,7 @@ FragTrap::~FragTrap( void ) {
 
 FragTrap::FragTrap( const FragTrap &copy ) : ClapTrap(copy) {
 	*this = copy;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
 FragTrap &FragTrap::operator=( const FragTrap &assign ) {
@@ -30,6 +30,7 @@ FragTrap &FragTrap::operator=( const FragTrap &assign ) {
 	this->_hp = assign._hp;
 	this->_ep = assign._ep;
 	this->_attk = assign._attk;
+	std::cout << "FragTrap assignment operator called" << std::endl;
 	return (*this);
 }
 

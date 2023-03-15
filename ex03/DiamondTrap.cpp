@@ -17,13 +17,13 @@ DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_trap") {
 	std::cout << "DiamondTrap " << _name << " constructed" << std::endl;
 }
 
-DiamondTrap::~DiamondTrap( void ) {
-	std::cout << "DiamondTrap " << _name << " deconstructed" << std::endl; 
-}
-
 DiamondTrap::DiamondTrap( const DiamondTrap &copy ) : ClapTrap(copy), ScavTrap(copy), FragTrap(copy) {
 	*this = copy;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "DiamondTrap copy constructor called" << std::endl;
+}
+
+DiamondTrap::~DiamondTrap( void ) {
+	std::cout << "DiamondTrap " << _name << " deconstructed" << std::endl; 
 }
 
 DiamondTrap &DiamondTrap::operator=( const DiamondTrap &assign ) {
@@ -31,6 +31,7 @@ DiamondTrap &DiamondTrap::operator=( const DiamondTrap &assign ) {
 	this->_hp = assign._hp;
 	this->_ep = assign._ep;
 	this->_attk = assign._attk;
+	std::cout << "DiamondTrap assignment operator called" << std::endl;
 	return (*this);
 }
 

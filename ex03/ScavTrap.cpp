@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap( void ) : ClapTrap() {
-	_name = "nameless";
+	//_name = "nameless";
 	_hp = 100;
 	_ep = 50;
 	_attk = 20;
@@ -9,7 +9,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap() {
 }
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name) {
-	_name = name;
+	//_name = name;
 	_hp = 100;
 	_ep = 50;
 	_attk = 20;
@@ -22,7 +22,7 @@ ScavTrap::~ScavTrap( void ) {
 
 ScavTrap::ScavTrap( const ScavTrap &copy ) : ClapTrap(copy) {
 	*this = copy;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=( const ScavTrap &assign ) {
@@ -30,6 +30,7 @@ ScavTrap &ScavTrap::operator=( const ScavTrap &assign ) {
 	this->_hp = assign._hp;
 	this->_ep = assign._ep;
 	this->_attk = assign._attk;
+	std::cout << "ScavTrap assignment operator called" << std::endl;
 	return (*this);
 }
 

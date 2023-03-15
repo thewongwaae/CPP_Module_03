@@ -16,7 +16,7 @@ ClapTrap::ClapTrap( std::string name ) : _name(name) {
 
 ClapTrap::ClapTrap( const ClapTrap &copy ) {
 	*this = copy;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap( void ) {
@@ -28,6 +28,7 @@ ClapTrap &ClapTrap::operator=( const ClapTrap &assign ) {
 	this->_hp = assign._hp;
 	this->_ep = assign._ep;
 	this->_attk = assign._attk;
+	std::cout << "ClapTrap assignment operator called" << std::endl;
 	return (*this);
 }
 
